@@ -8,8 +8,8 @@
 
 * @arklabsai/owners
 
-# Application repos: engineers own the app, owners keep the things that cost money or
-# hold secrets.
+# Narrow it where it helps: engineers own the application, owners keep the paths that
+# cost money or hold secrets.
 # /apps/          @arklabsai/engineers
 # /packages/      @arklabsai/engineers
 # /infra/         @arklabsai/owners
