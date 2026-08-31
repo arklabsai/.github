@@ -3,8 +3,7 @@
 Org-wide defaults for every repository in `github.com/arklabsai`.
 
 GitHub falls back to this repository when a repo has no file of its own at the same path.
-A repo that wants something different just adds its own — `arklabsai-infrastructure` does
-exactly that with a pull request template covering plans, drift and vendor changes.
+A repo that wants something different just adds its own, and several do.
 
 ## What is here
 
@@ -14,23 +13,28 @@ exactly that with a pull request template covering plans, drift and vendor chang
 | `.github/PULL_REQUEST_TEMPLATE.md` | Every PR in every repo without its own |
 | `.github/ISSUE_TEMPLATE/` | New issues in every repo without its own |
 | `templates/CODEOWNERS` | Copy into a new repo; not inherited (see below) |
-| `profile/README.md` | The organisation profile page |
+| `profile/README.md` | The public organisation profile page |
 
-## Visibility matters
+## This repository is public. It is the only one that is.
 
-**This repository is private, and that is deliberate.** GitHub matches visibility when it
-resolves default community health files: a private `.github` repo supplies defaults to
-*private* repos. Every ArkLabs repo is private, so this is the correct setting. Making it
-public would both leak our internal process and stop the defaults applying where we need
-them.
+It has to be: GitHub's rule is that **"the `.github` repository must be public"** for
+default community health files to resolve. A private one supplies nothing — which is what
+this repo did for its first half hour, until that was checked rather than assumed.
+
+A public `.github` repo does supply defaults to private repositories: *"GitHub will use and
+display default files for any repository owned by the account, regardless of the
+destination repository's visibility."* So every private ArkLabs repo inherits from here.
+
+**Everything committed here is world-readable.** Keep it generic. No hostnames, no
+infrastructure detail, no repository inventory, no process that describes how we actually
+operate. Anything specific belongs in a private repo. If you would not put it on the
+website, it does not go here.
 
 ## What is not inherited
 
 `CODEOWNERS` is **not** a community health file and does not fall back here. Each repo
-needs its own, which is why one lives in `templates/` to be copied. Nor are workflows —
-the reusable deploy workflow lives in
-[`arklabsai-infrastructure`](https://github.com/arklabsai/arklabsai-infrastructure) and is
-called by path, not inherited.
+needs its own, which is why one lives in `templates/` to be copied. Nor are workflows: a
+reusable workflow is called by path from the repo that owns it, not inherited.
 
 ## Branching
 
@@ -42,6 +46,5 @@ a change here is not live until it reaches `master`.
 
 ## Source of truth
 
-The estate, its vendors and the order things get built:
-[`arklabsai-infrastructure`](https://github.com/arklabsai/arklabsai-infrastructure) —
-`docs/INFRA_PLAN.md` for what and why, `docs/BUILD_PLAN.md` for how and in what order.
+The estate, its vendors and the order things get built are documented in a private
+repository. Deliberately not named or linked from here.

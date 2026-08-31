@@ -13,5 +13,5 @@ labels: task
 **Done when**
 <!-- The observable test. Not "improve X" — what will be true that is not true today? -->
 
-**Build plan reference**
-<!-- The task id in arklabsai-infrastructure/docs/BUILD_PLAN.md, if it has one. -->
+**Plan reference**
+<!-- The task id in the build plan, if it has one. -->
