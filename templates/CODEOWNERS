@@ -1,0 +1,16 @@
+# Copy to CODEOWNERS in the repository root.
+#
+# CODEOWNERS is NOT a community health file — it does not fall back to the org .github
+# repo, so every repository needs its own copy. That is why this is a template.
+#
+# The rulesets require code-owner review, so a path with no owner is a path nobody has to
+# look at. Prefer a catch-all plus specific overrides.
+
+* @arklabsai/owners
+
+# Application repos: engineers own the app, owners keep the things that cost money or
+# hold secrets.
+# /apps/          @arklabsai/engineers
+# /packages/      @arklabsai/engineers
+# /infra/         @arklabsai/owners
+# /.github/       @arklabsai/owners
